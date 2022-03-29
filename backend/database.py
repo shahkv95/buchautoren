@@ -1,16 +1,26 @@
 from model import Todo
 
-# MongoDB driver
-import motor.motor_asyncio
+# mongodb driver recommended by mongodb atlas
+import pymongo
+from pymongo.server_api import ServerApi
 
-client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://cluster0.g4amf.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1')
+# MongoDB driver
+# import motor.motor_asyncio
+
+client = pymongo.MongoClient(
+    "mongodb+srv://kush-user:KusHUseR65@cluster0.g4amf.mongodb.net/TodoList?retryWrites=true&w=majority", server_api=ServerApi('1'))
+# db = client.test
+
+# client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://cluster0.g4amf.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1')
 
 database = client.TodoList
 collection = database.todo
 
+
 async def fetch_one_todo(title):
     document = await collection.find_one({"title": title})
     return document
+
 
 async def fetch_all_todos():
     todos = []
@@ -19,15 +29,18 @@ async def fetch_all_todos():
         todos.append(Todo(**document))
     return todos
 
+
 async def create_todo(todo):
     document = todo
     result = await collection.insert_one(document)
-    return result
-
-async def update_todo(title, description):
-    await collection.update_one({"title": title}, {"$set":{"description": description}})
-    document = await collection.find_one({"title":title})
     return document
+
+
+async def update_todo(title, desc):
+    await collection.update_one({"title": title}, {"$set": {"description": desc}})
+    document = await collection.find_one({"title": title})
+    return document
+
 
 async def remove_todo(title):
     await collection.delete_one({"title": title})

@@ -8,6 +8,7 @@ fastapi = "==0.65.1"
 uvicorn = "==0.14.0"
 motor = "==2.4.0"
 uvloop = "==0.14.0"
+pymongo = "*"
 
 [dev-packages]
 

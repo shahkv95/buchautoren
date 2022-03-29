@@ -1,5 +1,13 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+
+from database import (
+    fetch_one_todo,
+    fetch_all_todos,
+    create_todo,
+    update_todo,
+    remove_todo,
+)
 
 # App object
 app = FastAPI()

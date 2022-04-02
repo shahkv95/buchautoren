@@ -1,8 +1,8 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TodoView from './components/TodoListView';
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
 
   // Read all todos 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/todos')
+    axios.get('http://localhost:8000/api/todo')
     .then(res => {
       setTodoList(res.data)
     })
@@ -48,7 +48,7 @@ function App() {
           <h5 className= "card text-white bg-dark mb-3">Your Tasks</h5>
 
           <div>
-            {/* Todo items - external component */}
+            <TodoView todoList={todoList}/>
           </div>
 
         </div>

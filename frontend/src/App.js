@@ -24,6 +24,10 @@ function App() {
     .then(res => console.log(res))
   };
 
+  // reseting the value of description placeholder when reset button is clicked
+  const descInput = React.useRef();
+  const clearInput = () => (descInput.current.value = "");
+
   return (
       <div className= "App list-group-item justify-content-center align-items-center mx-auto" style={{"width": "400px", "backgroundColor": "white", "marginTop": "15px"}}>
 
@@ -39,9 +43,11 @@ function App() {
 
             <input className= "mb-2 form-control titleIn" placeholder='Title' onChange={event => setTitle(event.target.value)}/>
 
-            <input className= "mb-2 form-control descIn" placeholder='Description' onChange={event => setDesc(event.target.value)}/>
+            <input className= "mb-2 form-control descIn" placeholder='Description' onChange={event => setDesc(event.target.value)} ref={descInput}/>
             
             <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}} onClick={addTodoHandler}>Add Task</button>
+
+            <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}} onClick={clearInput}>Reset Description</button>
 
           </span>
 

@@ -39,17 +39,17 @@ function App() {
 
           <h5 className= "card text-white bg-dark mb-3">Add your task</h5>
 
-          <span className= "card-text">
+          <form className= "card-text">
 
-            <input className= "mb-2 form-control titleIn" placeholder='Title' onChange={event => setTitle(event.target.value)}/>
+            <input className= "mb-2 form-control titleIn" placeholder='Title' onChange={event => setTitle(event.target.value)} value={title} required/>
 
             <input className= "mb-2 form-control descIn" placeholder='Description' onChange={event => setDesc(event.target.value)} ref={descInput}/>
             
-            <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}} onClick={addTodoHandler}>Add Task</button>
+            <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}} onClick={addTodoHandler} disabled={title === ""}>Add Task</button>
 
             <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}} onClick={clearInput}>Reset Description</button>
 
-          </span>
+          </form>
 
           <h5 className= "card text-white bg-dark mb-3">Your Tasks</h5>
 

@@ -43,11 +43,11 @@ function App() {
 
             <input className= "mb-2 form-control titleIn" placeholder='Title' onChange={event => setTitle(event.target.value)} value={title} required/>
 
-            <input className= "mb-2 form-control descIn" placeholder='Description' onChange={event => setDesc(event.target.value)} ref={descInput}/>
+            <input className= "mb-2 form-control descIn" placeholder='Description' onChange={event => setDesc(event.target.value)} ref={descInput} disabled={title === ""}/>
             
             <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}} onClick={addTodoHandler} disabled={title === ""}>Add Task</button>
 
-            <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}} onClick={clearInput}>Reset Description</button>
+            <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}} onClick={clearInput} disabled={desc === ""}>Reset Form</button>
 
           </form>
 

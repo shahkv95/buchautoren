@@ -8,4 +8,4 @@
 - [ ] Add ci cd for backend and frontend
 - [ ] Add pagination
 - [ ] Dockerize the application
-- [ ] Deply the app
+- [ ] Deploy the app

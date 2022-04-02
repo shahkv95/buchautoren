@@ -1,17 +1,18 @@
 from model import Todo
 
 # mongodb driver recommended by mongodb atlas
-import pymongo
-from pymongo.server_api import ServerApi
+# import pymongo
+# from pymongo.server_api import ServerApi
 
 # MongoDB driver
-# import motor.motor_asyncio
+import motor.motor_asyncio
 
-client = pymongo.MongoClient(
-    "mongodb+srv://kush-user:KusHUseR65@cluster0.g4amf.mongodb.net/TodoList?retryWrites=true&w=majority", server_api=ServerApi('1'))
+# client = pymongo.MongoClient(
+#     "mongodb+srv://kush-user:KusHUseR65@cluster0.g4amf.mongodb.net/TodoList?retryWrites=true&w=majority", server_api=ServerApi('1'))
 # db = client.test
 
-# client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://cluster0.g4amf.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1')
+client = motor.motor_asyncio.AsyncIOMotorClient(
+    'mongodb+srv://kush-user:KusHUseR65@cluster0.g4amf.mongodb.net/TodoList?retryWrites=true&w=majority')
 
 database = client.TodoList
 collection = database.todo

@@ -5,6 +5,25 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 function App() {
+
+  const [todoList, setTodoList] = useState([{}])
+  const [title, setTitle] = useState('')
+  const [desc, setDesc] = useState('')
+
+  // Read all todos 
+  useEffect(() => {
+    axios.get('http://localhost:8000/api/todos')
+    .then(res => {
+      setTodoList(res.data)
+    })
+  });
+
+  // Post a todo
+  const addTodoHandler = () => {
+    axios.post('http://localhost:8000/api/todo/', { 'title': title, 'description': desc})
+    .then(res => console.log(res))
+  };
+
   return (
       <div className= "App list-group-item justify-content-center align-items-center mx-auto" style={{"width": "400px", "backgroundColor": "white", "marginTop": "15px"}}>
 
@@ -18,10 +37,11 @@ function App() {
 
           <span className= "card-text">
 
-            <input className= "mb-2 form-control titleIn" placeholder='Title'/>
-            <input className= "mb-2 form-control descIn" placeholder='Description'/>
+            <input className= "mb-2 form-control titleIn" placeholder='Title' onChange={event => setTitle(event.target.value)}/>
+
+            <input className= "mb-2 form-control descIn" placeholder='Description' onChange={event => setDesc(event.target.value)}/>
             
-            <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}}>Add Task</button>
+            <button className= "btn btn-outline-primary mx-2 mb-3" style={{"font-weight": "bold"}} onClick={addTodoHandler}>Add Task</button>
 
           </span>
 

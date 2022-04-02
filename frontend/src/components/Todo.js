@@ -7,18 +7,23 @@ function TodoItem(props) {
         .then(res => console.log(res.data))}
     return (
         <div>
-            <p>
-                <span style={{fontWeight: 'bold, underline'}}>
-                    {props.todo.title} :      
-                </span>
 
-                {props.todo.description}
+        <table style={{"width":"100%"}}>
+            <tr>
+                <td style={{"width":"25%", "textAlign": "left"}}>
+                    {props.todo.title}
+                </td>
+                <td style={{"width":"50%", "textAlign": "left"}}>
+                    {props.todo.description}
+                </td>
+                <td style={{"width":"10%"}}>
+                    <button onClick={() => deleteTodoHandler(props.todo.title)} className="btn btn-outline-danger my-2 mx-2" style={{'borderRadius':'50px',}}>Delete
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <hr></hr>
 
-                <button onClick={() => deleteTodoHandler(props.todo.title)} className="btn btn-outline-danger my-2 mx-2" style={{'borderRadius':'50px',}}>Delete</button>
-
-                <hr></hr>
-
-            </p>
         </div>
     )
 }

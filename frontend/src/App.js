@@ -33,7 +33,7 @@ function App() {
 
         <h1 className= "card text-white bg-primary mb-1" styleName="max-width: 20rem;">Buchautoren</h1>
 
-        <h6 className= "card text-white bg-primary mb-3">FARM Stack</h6>
+        <h6 className= "card text-white bg-primary mb-3">FARM Stack: FastAPI - React - MongoDB</h6>
 
         <div className= "card-body">
 
@@ -51,7 +51,7 @@ function App() {
 
           </form>
 
-          <h5 className= "card text-white bg-dark mb-3">Your Books and Authors</h5>
+          <h5 className= "card text-white bg-dark mb-3">Your books and authors</h5>
 
           <div>
             <TodoView todoList={todoList}/>

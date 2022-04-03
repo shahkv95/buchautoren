@@ -10,10 +10,10 @@ function TodoItem(props) {
 
         <table style={{"width":"100%"}}>
             <tr>
-                <td style={{"width":"25%", "textAlign": "left", "fontWeight": "bold"}}>
+                <td style={{"width":"45%", "textAlign": "left", "fontWeight": "bold"}}>
                     {props.todo.title}
                 </td>
-                <td style={{"width":"50%", "textAlign": "left"}}>
+                <td style={{"width":"45%", "textAlign": "left"}}>
                     {props.todo.description}
                 </td>
                 <td style={{"width":"10%"}}>

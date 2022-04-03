@@ -1,5 +1,5 @@
 # Buchautoren
-Buchautoren is a german term for books and its authors. This app helps you to handle a list of books and their authors 
+Buchautoren is a german term for books and its authors. This app helps you to keep a record of books and their authors 
 
 <hr>
 

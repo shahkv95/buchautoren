@@ -37,8 +37,8 @@ async def create_todo(todo):
     return document
 
 
-async def update_todo(title, desc):
-    await collection.update_one({"title": title}, {"$set": {"description": desc}})
+async def update_todo(title, author):
+    await collection.update_one({"title": title}, {"$set": {"Author name": author}})
     document = await collection.find_one({"title": title})
     return document
 

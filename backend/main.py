@@ -59,8 +59,8 @@ async def post_todo(todo: Todo):
 
 
 @app.put("/api/todo/{title}/", response_model=Todo)
-async def put_todo(title: str, desc: str):
-    response = await update_todo(title, desc)
+async def put_todo(title: str, author: str):
+    response = await update_todo(title, author)
     if response:
         return response
     raise HTTPException(404, f"There is no todo with the title {title}")

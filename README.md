@@ -5,6 +5,7 @@ Buchautoren is a german term for books and its authors. This app helps you to ha
 
 ## Future Tasks
 - [ ] Abstract and refactor the code
+- [ ] Add authentication to the app
 - [ ] Add more fields like serial numbers, date of addition, book description, etc to the list
 - [ ] Make sure that the title entered is unique - submition of duplicate title should not be allowed
 - [ ] Allow user to edit the submitted entry [backend already done - frontend remaining]

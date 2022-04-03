@@ -40,7 +40,7 @@ function App() {
 
           <form className= "card-text">
 
-            <input className= "mb-2 form-control titleIn" placeholder='Book Title' onChange={event => setTitle(event.target.value)} value={title} required/>
+            <input className= "mb-2 form-control titleIn" placeholder='Book title' onChange={event => setTitle(event.target.value)} value={title} required/>
 
             <input className= "mb-2 form-control descIn" placeholder='Author names' onChange={event => setDesc(event.target.value)} ref={descInput} disabled={title === ""}/>
 
@@ -50,7 +50,7 @@ function App() {
 
           </form>
 
-          <h5 className= "card text-white bg-dark mb-3 pt-1 pb-1">Your Books and Authors</h5>
+          <h5 className= "card text-white bg-dark mb-3 pt-1 pb-1">Your books and authors</h5>
 
           <div>
             <TodoView todoList={todoList}/>
